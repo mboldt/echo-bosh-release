@@ -1,0 +1,3 @@
+[submodule "src/echo-app"]
+	path = src/echo-app
+	url = ../echo-app
