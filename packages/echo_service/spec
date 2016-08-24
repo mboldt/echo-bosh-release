@@ -5,4 +5,4 @@ dependencies:
 - python_2.7.12
 
 files:
-- echo_app/**/*
+- echo-app/**/*
