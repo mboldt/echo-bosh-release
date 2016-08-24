@@ -1,7 +1,7 @@
 ---
 name: echo_service
 templates:
-  ctr.erb: bin/ctl
+  ctl.erb: bin/ctl
 
 packages:
 - echo_service
