@@ -1,0 +1,10 @@
+# abort script on any command that exits with a non zero value
+set -e -x -u
+
+tar -xJf python_2.7.12/Python-2.7.12.tar.xz
+
+pushd Python-2.7.12
+./configure --prefix=${BOSH_INSTALL_TARGET}
+make
+make install
+popd
