@@ -1,0 +1,9 @@
+# abort script on any command that exits with a non zero value
+set -e -x -u
+
+cp -a echo_service/* ${BOSH_INSTALL_TARGET}
+
+cd ${BOSH_INSTALL_TARGET}
+
+/var/vcap/packages/python_2.7.12/bin/pip install -U pip
+/var/vcap/packages/python_2.7.12/bin/pip install -r requirements.txt
