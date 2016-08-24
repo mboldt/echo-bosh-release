@@ -14,6 +14,7 @@ case $1 in
 
     cd /var/vcap/packages/echo_service
     export PATH=/var/vcap/packages/python_2.7.12/bin:$PATH
+    export PORT=<%= p('echo_service.port') %>
     exec python echo.py
 
     ;;

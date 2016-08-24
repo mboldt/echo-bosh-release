@@ -6,3 +6,8 @@ templates:
 packages:
 - echo_service
 - python_2.7.12
+
+properties:
+  echo_service.port:
+    description: Port that the echo_service listens on
+    default: 8080
