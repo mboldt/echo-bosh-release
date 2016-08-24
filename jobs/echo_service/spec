@@ -1,0 +1,6 @@
+---
+name: echo_service
+templates:
+  ctr.erb: bin/ctl
+
+packages:
