@@ -4,3 +4,5 @@ templates:
   ctr.erb: bin/ctl
 
 packages:
+- echo_service
+- python_2.7.12

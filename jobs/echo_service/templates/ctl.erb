@@ -12,17 +12,9 @@ case $1 in
 
     echo $$ > $PIDFILE
 
-    # FIXME wtf is this?
-    cd /var/vcap/packages/ardo_app
-
-    # FIXME Do we set up the virtualenv here?
-    export PATH=/var/vcap/packages/ruby_1.9.3/bin:$PATH
-
-    # FIXME change to python command.
-    exec /var/vcap/packages/ruby_1.9.3/bin/bundle exec \
-      rackup -p <%= properties.web_ui.port %> \
-      >>  $LOG_DIR/echo_service.stdout.log \
-      2>> $LOG_DIR/echo_service.stderr.log
+    cd /var/vcap/packages/echo_service
+    export PATH=/var/vcap/packages/python_2.7.12/bin:$PATH
+    exec python echo.py
 
     ;;
 
