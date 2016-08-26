@@ -1,5 +1,5 @@
 ---
-name: echo_service
+name: echo_package
 
 dependencies:
 - python_2.7.12

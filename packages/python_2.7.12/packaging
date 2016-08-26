@@ -4,7 +4,12 @@ set -e -x -u
 tar -xJf python_2.7.12/Python-2.7.12.tar.xz
 
 pushd Python-2.7.12
-./configure --prefix=${BOSH_INSTALL_TARGET}
+./configure --prefix=${BOSH_INSTALL_TARGET} --with-ensurepip
 make
 make install
 popd
+
+# Debug
+#echo "Installed into ${BOSH_INSTALL_TARGET}"
+#find ${BOSH_INSTALL_TARGET}
+#false

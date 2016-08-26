@@ -1,5 +1,0 @@
-check process echo_service
-      with pidfile /var/vcap/sys/run/echo_service/pid
-      start program "/var/vcap/jobs/echo_service/bin/ctl start"
-      stop program "/var/vcap/jobs/echo_service/bin/ctl stop"
-      group vcap

@@ -1,0 +1,4 @@
+# abort script on any command that exits with a non zero value
+set -e -x -u
+
+cp -a echo-app/* ${BOSH_INSTALL_TARGET}

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/echo_job
+LOG_DIR=/var/vcap/sys/log/echo_job
+PIDFILE=${RUN_DIR}/echo_job.pid
+
+exec 1>> $LOG_DIR/$JOB_NAME.stdout.log
+exec 2>> $LOG_DIR/$JOB_NAME.stderr.log
+
+case $1 in
+
+  start)
+    echo "In start"
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    echo $$ > $PIDFILE
+
+    cd /var/vcap/packages/echo_package
+    export PATH=/var/vcap/packages/python_2.7.12/bin:$PATH
+    export PYTHONHOME=/var/vcap/packages/python_2.7.12
+    export PORT=<%= p('echo_job.port') %>
+    python -m ensurepip
+    python -m pip install -U pip
+    python -m pip install -r requirements.txt
+    exec ${PYTHONHOME}/bin/python echo.py
+    ;;
+
+  stop)
+    kill -9 `cat $PIDFILE`
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac

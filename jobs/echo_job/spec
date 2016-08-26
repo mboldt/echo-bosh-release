@@ -1,0 +1,13 @@
+---
+name: echo_job
+templates:
+  ctl.erb: bin/echo_job_ctl
+
+packages:
+- echo_package
+- python_2.7.12
+
+properties:
+  echo_job.port:
+    description: Port that the echo_job listens on
+    default: 8080
