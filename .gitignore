@@ -2,3 +2,5 @@ config/blobs.yml
 config/dev.yml
 config/private.yml
 blobs
+.dev_builds
+dev_releases
