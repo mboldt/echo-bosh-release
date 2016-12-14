@@ -20,6 +20,10 @@ case $1 in
     export PATH=/var/vcap/packages/python_2.7.12/bin:$PATH
     export PYTHONHOME=/var/vcap/packages/python_2.7.12
     export PORT=<%= p('echo_job.port') %>
+    # <%= link('other_guy') %>
+    # <%= JSON.dump(link('other_guy')) %>
+    # <%= link('other_guy').to_json %>
+    export OTHER_GUY=<%= link('other_guy').p('foo') %>
     python -m ensurepip
     python -m pip install -U pip
     python -m pip install -r requirements.txt

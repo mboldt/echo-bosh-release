@@ -11,3 +11,11 @@ properties:
   echo_job.port:
     description: Port that the echo_job listens on
     default: 8080
+  foo:
+    description: Testing links
+    default: <Undefined>
+
+provides:
+  - name: other_guy
+    properties:
+      - foo
