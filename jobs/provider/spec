@@ -1,0 +1,16 @@
+---
+name: provider
+templates: {}
+
+packages: []
+
+properties:
+  foo:
+    description: Testing links
+    default: <Undefined>
+
+provides:
+  - name: other_guy
+    type: other_guy_type
+    properties:
+      - foo

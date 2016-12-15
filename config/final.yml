@@ -2,5 +2,5 @@
 blobstore:
   provider: local
   options:
-    blobstore_path: /Users/mboldt/tmp/blobstore
+    blobstore_path: /tmp
   final_name: echo_service

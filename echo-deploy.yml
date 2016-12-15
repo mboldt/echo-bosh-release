@@ -5,10 +5,10 @@
 
 name: echo_deployment
 
-director_uuid: 28539132-6d43-4e1b-bf40-f2ce032ee9f8
+director_uuid: 93c01d2d-a2a5-49d8-8d02-389fd223a9cf
 
 releases:
-- name: echo_release
+- name: echo-bosh-example-release
   version: latest
 
 stemcells:
@@ -25,7 +25,7 @@ instance_groups:
   - name: manual
   jobs:
   - name: echo_job
-    release: echo_release
+    release: echo-bosh-example-release
 
 update:
   canaries: 1
