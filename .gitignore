@@ -4,3 +4,4 @@ config/private.yml
 blobs
 .dev_builds
 dev_releases
+tile/resources/*.tgz
